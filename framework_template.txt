@@ -1,0 +1,56 @@
+#!/bin/bash
+export LANG=C.UTF-8
+
+# QUIT FUNCTION
+function quit() {
+  echo THANK YOU FOR USING THIS TOOL
+  exit 2
+}
+
+function banner {
+  clear
+  echo -e "
+
+banner_text_here
+                                                        
+  "
+
+  echo
+}
+banner
+
+# CATCH CTRL
+trap quit 2
+
+function help {
+  echo -e "
+
+help_menu_here
+
+  "
+
+}
+
+argument_variables_here
+option_help="h"
+
+while true; do
+
+  input="input_here"
+  echo -e -n "$input"
+
+  read -r x
+
+  case $x in
+
+  "$option_help")
+    help
+  ;;
+
+options_here
+
+  *)
+    echo -e -n "unknown\n"
+    ;;
+  esac
+done
